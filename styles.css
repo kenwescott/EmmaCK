@@ -1,0 +1,305 @@
+* {
+   padding: 0;
+   margin: 0;
+   outline: none;
+   border: none; 
+}
+
+@font-face {
+    font-family:"Galmine" ;
+    src: url(Galmine-q2DR1.otf);
+}
+
+@font-face {
+    font-family:"Basheq Vintage" ;
+    src: url(BasheqVintageDemoVersionRegular-ov13x.ttf);
+}
+
+@font-face {
+    font-family:"Quackey Regular" ;
+    src: url(QuackeyFreeRegular-w1Ymz.otf);
+}
+
+body{
+    padding: 0 ;
+    margin: 60px;
+}
+
+.content,
+.UI-ex,
+.myprojects,
+.resources {
+  margin: 0 auto;
+  background-color:#ffdec7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+
+header{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.header-logo {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-right: 250px;
+    margin-left: 40px;
+    color:rgb(174, 100, 85);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Basheq Vintage";
+}
+
+.navbar-nav{
+    border: 3px solid #A0212C;
+    border-radius:15px;
+    padding: 5px 10px; 
+    gap: 30px; /* works only if .navbar-nav is a flex container */
+    display: flex;
+}
+
+#navbar{
+    margin-bottom: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+   
+    /* verify sticky later*/
+}
+.nav-link {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    gap:100px;
+    transition: 0.5s;
+    cursor: pointer;
+    color:rgb(174, 100, 85);
+    font-family:"Quackey Regular";
+}
+.nav-link:hover {
+    color:rgb(239, 158, 112);
+}
+
+.header-logo:hover {
+    color:rgb(239, 158, 112);
+}
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("Présentation portfolio professionnel photographe moderne dégradé coloré_20250524_075323_0000.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  font-size:80 px;
+  z-index: 9999;
+  transition: opacity 1s ease; /* Smooth fade-out */
+}
+
+#splash-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.head2{
+  font-family:"Galmine";
+  font-size:650px;
+  margin-top: 570px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 5s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content{
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    margin: 0 auto;
+    font-family:"Quackey Regular";
+}
+
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    border-radius: 15px;
+    gap: 30px;
+    padding: 0 10%;
+    padding-bottom: 40px;
+}
+
+
+.right{
+    justify-content: center;
+}
+h3{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-top: 60px;
+}
+
+
+
+.hero-img{
+    width:300 px;
+    height:400px;
+    object-fit: cover;
+    border-radius: 15px;
+    position: absolute;
+}
+
+.content p{
+    font-size: 18px;
+    font-weight: 650;
+    line-height: 1.3;
+    margin-top: 10px;
+}
+
+p a{
+    color:#BF3604;
+}
+
+.UI-ex{
+    margin-top: 50px;
+    width:1100px;
+    border-top: 10px solid rgb(174, 100, 85);
+    font-family:"Quackey Regular";
+    padding: 40px 5%;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Adjust width ratio as needed */
+    gap: 50px; /* Space between h3 and p */
+    align-items: start;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.UI-ex h3{
+    margin: 0;
+    font-size: 5rem;
+    text-align: left;
+    color: rgb(239, 158, 112)
+}
+
+.UI-ex p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+  font-weight: 600;
+}
+
+.resources{
+    width:1100px;
+    border-top: 10px solid #BF3604;
+    padding: 10px;
+    padding-left: 30px;
+    margin-top: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Change text color and icon color on hover */
+.accordion-button:hover {
+  color: rgb(245,185,40); /* text color */
+}
+
+/* Change arrow icon (chevron) color on hover */
+.accordion-button::after {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(94%) saturate(6013%) hue-rotate(2deg) brightness(102%) contrast(106%);
+  transition: filter 0.3s ease;
+}
+
+.accordion-button:hover::after {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(94%) saturate(6013%) hue-rotate(2deg) brightness(102%) contrast(106%);
+}
+
+/* Active (expanded) accordion button background and text color */
+.accordion-button:not(.collapsed) {
+  background-color: #ffe5cc; /* light orange shade */
+  color: rgb(245,185,40); /* text color */
+}
+
+/* Optional: change the hover state of an expanded button */
+.accordion-button:not(.collapsed):hover {
+  background-color: #ffdbb3; /* slightly darker shade on hover */
+  color: orange;
+}
+.accordion-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.5); /* Orange glow */
+}
+
+.resources h3{
+    font-family:"Quackey Regular";
+    margin-bottom: 45px;
+}
+
+.myprojects{
+    width:1100px;
+    padding: 10px;
+    padding-left: 30px;
+    margin-top: 50px;
+    border-top: 10px solid #A0212C;
+}
+
+.myprojects h3{
+    font-family:"Quackey Regular";
+    margin-bottom: 45px;
+}
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;          
+  gap: 20px;                 
+  justify-content: center;  
+  margin-top: 30px;
+}
+
+
+.card-slider {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  scrollbar-width: none;  /* hide scrollbar in Firefox */
+}
+.card-slider::-webkit-scrollbar {
+  display: none; /* hide scrollbar in Chrome/Safari */
+}
+
+.custom-btn {
+  background-color: #BF3604;    /* your custom color */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #ff914d;  /* lighter shade on hover */
+  color: white;
+}
+
+
+
+
+
